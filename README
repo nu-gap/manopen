@@ -5,6 +5,8 @@ GNUstep build: run `sh build.sh` with GNUstep's buildtool on PATH.
 The script also packages the cat2rtf and cat2html helpers, since buildtool
 does not execute the Xcode project's Copy Files phase. The application is
 written to build/ManOpenApplication/Products/ManOpen.app.
+Use this script rather than invoking buildtool directly: without the bundled
+formatters, the app cannot display any manual pages.
 Run `sh Tests/run.sh` after building for the GUI manpage smoke test
 (requires an X display and the ls(1) and printf(1) manual pages).
 
