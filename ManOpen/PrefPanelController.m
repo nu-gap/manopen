@@ -101,10 +101,12 @@ void RegisterManDefaults()
     NSString *xcodeManpath = nil;
     NSString *manpath = nil;
     if (fp) {
-        xcodeManpath = [NSString stringWithCString:fgets(path, PATH_MAX, fp) encoding:NSUTF8StringEncoding];
+        if (fgets(path, PATH_MAX, fp) != NULL)
+            xcodeManpath = [[NSString stringWithCString:path encoding:NSUTF8StringEncoding]
+                stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         pclose(fp);
     }
-    if (xcodeManpath) {
+    if ([xcodeManpath length] > 0) {
         manpath = xcodeManpath;
     } else {
         manpath = @"/usr/local/man:/usr/share/man";

@@ -25,7 +25,7 @@
 #import "FindPanelController.h"
 #import "PrefPanelController.h"
 
-#ifndef MACOS_X
+#if !defined(MACOS_X) && !defined(GNUSTEP)
   /* These were private in pre-MacOS X... */ 
   @interface NSDocumentController (ApplePrivate)
   - (void)_addDocument:(NSDocument *)document;

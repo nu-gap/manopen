@@ -232,7 +232,7 @@
 - (NSString *)filterCommand
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-#ifdef OPENSTEP
+#if defined(OPENSTEP) || defined(GNUSTEP)
     NSString *tool = @"cat2rtf";
 #elif !defined(MACOS_X)
     NSString *tool = @"cat2html";

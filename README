@@ -1,6 +1,13 @@
 
 ManOpen v2.5.1 by Carl Lindberg  November 2005
 
+GNUstep build: run `sh build.sh` with GNUstep's buildtool on PATH.
+The script also packages the cat2rtf and cat2html helpers, since buildtool
+does not execute the Xcode project's Copy Files phase. The application is
+written to build/ManOpenApplication/Products/ManOpen.app.
+Run `sh Tests/run.sh` after building for the GUI manpage smoke test
+(requires an X display and the ls(1) and printf(1) manual pages).
+
 	Please send any comments, suggestions or bug reports to
 	lindberg@clindberg.org.
 
